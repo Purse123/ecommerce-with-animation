@@ -2,7 +2,7 @@ import React from 'react'
 
 function InfiniteScroll() {
   return (
-    <div>InfiniteScroll</div>
+    <div className=' h-52 bg-white'>InfiniteScroll</div>
   )
 }
 
