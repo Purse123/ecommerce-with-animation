@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
-import right from '../../../public/right.svg';
+import React, { useEffect, useState } from 'react'
+import right from '/right.svg';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
+  const [hover, setHover] = useState(false);
 
   const bgChange = () => {
     if (window.scrollY >= 500) {
@@ -13,13 +14,26 @@ const Navbar = () => {
       setNavbar(false);
     }
   }
+  useEffect(() => {
 
   window.addEventListener('scroll', bgChange);
+    return () => {
+      window.removeEventListener('scroll', bgChange);
+    };
+  }, [])
 
   return (
     <div
-    className={navbar? 'Navbar flex justify-between items-center px-28 h-20 border-b-w-0.5 border-slate-300  sticky top-0 left-0 bg-white text-black' : 'Navbar w-full flex justify-between items-center px-28 h-20 border-b-w-0.5 border-slate-300 fixed top-0 left-0 bg-transparent'}
-    >
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      className={
+        hover ? 
+          'Navbar flex justify-between items-center px-28 h-20 border-b-w-0.5 border-slate-300 bg-white text-black transition-colors duration-500 ease-in-out fixed w-full top-0 left-0' :
+          (navbar ?
+            'Navbar flex justify-between items-center px-28 h-20 border-b-w-0.5 border-slate-300 bg-white text-black transition-colors duration-500 ease-in-out sticky top-0 left-0' :
+            'Navbar w-full flex justify-between items-center px-28 h-20 border-b-w-0.5 border-slate-300 fixed top-0 left-0 bg-transparent transition-colors duration-500 ease-in-out'
+          )
+    }>
       <h1 className='text-3xl'>
         <Link to={"/"}>
           PIERᑕE
