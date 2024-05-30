@@ -1,5 +1,5 @@
 import React from 'react'
-import InfiniteScroll from './InfiniteScroll';
+import InfiniteScroll from './infiniteScroll/InfiniteScroll';
 import video from "/medium.mp4"
 
 const Hero = () => {

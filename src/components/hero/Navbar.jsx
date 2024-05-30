@@ -15,7 +15,6 @@ const Navbar = () => {
     }
   }
   useEffect(() => {
-
   window.addEventListener('scroll', bgChange);
     return () => {
       window.removeEventListener('scroll', bgChange);

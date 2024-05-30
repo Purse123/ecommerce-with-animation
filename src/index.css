@@ -7,6 +7,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background-color: #080808;
   --font-color: #A2B5B5;
@@ -23,4 +24,11 @@ body {
   top: 0;
   left: 0;
   z-index: 1;
+}
+
+@layer utilities {
+  .mask {
+    -webkit-mask: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+    mask: linear-gradient(90deg, transparent, black 15%, black 85%, transparent);
+  }
 }

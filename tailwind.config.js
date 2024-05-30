@@ -1,3 +1,5 @@
+import { transform } from 'framer-motion';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -14,6 +16,15 @@ export default {
       },
       colors: {
         'orange-1': '#FF6E40'
+      },
+      animation: {
+        sliding: 'slide 10s infinite linear'
+      },
+      keyframes: {
+        slide: {
+          'from': {transform: 'translateX(0)'},
+          'to': {transform: 'translateX(-100%)'},
+        }
       }
     },
   },
